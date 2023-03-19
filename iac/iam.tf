@@ -29,5 +29,5 @@ resource "aws_iam_instance_profile" "demo-profile" {
   role = aws_iam_role.test_role.name
 }
 data "aws_iam_policy" "policy-code-deploy-ec2" {
-  name = "AmazonEC2RoleForAWSCodeDeploy"
+  name = "AmazonEC2RoleforAWSCodeDeploy"
 }
