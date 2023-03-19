@@ -43,5 +43,5 @@ jobs:
       
       - name: terraform apply
         id: apply
-        run: terraform apply -input=false
+        run: terraform apply -input=false -auto-approve
         working-directory: ./iac
