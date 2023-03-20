@@ -12,10 +12,8 @@ echo "Restart=on-failure" >> $serverfile
 echo "[Install]" >> $serverfile
 echo "WantedBy=multi-user.target" >> $serverfile
 cat $serverfile
-
 sudo chmod 644 /lib/systemd/system/mypythonservice.service
-
+sudo systemctl stop mypythonservice.service
 sudo systemctl daemon-reload
-
 sudo systemctl enable mypythonservice.service
 sudo systemctl start mypythonservice.service
