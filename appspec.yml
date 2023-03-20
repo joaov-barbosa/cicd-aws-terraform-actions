@@ -2,7 +2,7 @@ version: 0.0
 os: linux
 files:
  - source: .
-   destination: /home/ubuntu/cicd-aws-terraform-actions
+   destination: /home/ubuntu/cicd-aws-terraform-actions/
 hooks:
   AfterInstall:
    - location: scripts/install_app_dependencies
