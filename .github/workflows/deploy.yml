@@ -1,0 +1,10 @@
+name: deploy
+on:
+   workflow_dispatch:
+jobs:
+    deploy:
+         name: infra
+         runs-on: ubuntu-latest
+         steps:
+           - name: checkout
+             uses: actions/checkout@v3
