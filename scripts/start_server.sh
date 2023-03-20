@@ -6,7 +6,7 @@ echo "After=multi-user.target" >> $serverfile
 
 echo "[Service]" >> $serverfile
 echo "Type=idle" >> $serverfile
-echo "ExecStart=/usr/bin/python3.8 /home/ubuntu/Main.py" >> $serverfile
+echo "ExecStart=/usr/bin/python3.8 /home/ubuntu/cicd-aws-terraform-actions/Main.py" >> $serverfile
 echo "Restart=on-failure" >> $serverfile
 
 echo "[Install]" >> $serverfile
