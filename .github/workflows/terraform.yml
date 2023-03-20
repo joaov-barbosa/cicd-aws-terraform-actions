@@ -1,11 +1,6 @@
 name: terraform
 
 on:
-  push: 
-    branches:       
-      - dev 
-      - stg
-      - master
   workflow_dispatch:
 
 jobs:
