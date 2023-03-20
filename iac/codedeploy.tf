@@ -7,9 +7,10 @@ resource "aws_codedeploy_deployment_group" "example" {
   service_role_arn      = aws_iam_role.codedeploy_service.arn
     ec2_tag_set {
       ec2_tag_filter {
-      name   = "http_server"
+      key   =  Name
       type  = "KEY_AND_VALUE"
-      value = "filtervalue"
+      value = "http_server"
+
      }
 
     }
