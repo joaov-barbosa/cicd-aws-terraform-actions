@@ -3,8 +3,23 @@ on:
    workflow_dispatch:
 jobs:
     deploy:
-         name: infra
+         name: deploy
          runs-on: ubuntu-latest
          steps:
            - name: checkout
              uses: actions/checkout@v3
+           - name: set credentials aws
+             uses: aws-actions/configure-aws-credentials@13d241b293754004c80624b5567555c4a39ffbe3
+             with:
+               aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+               aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+               aws-region: ${{ vars.AWS_REGION }}
+           
+           - name: Create CodeDeploy Deployment
+             id: deploy
+             run: |
+              aws deploy create-deployment \
+              --application-name example-app \
+              --deployment-group-name example-group \
+              --deployment-config-name CodeDeployDefault.OneAtATime \
+              --github-location repository=${{ github.repository }},commitId=${{ github.sha }}

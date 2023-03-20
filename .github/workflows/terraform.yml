@@ -4,9 +4,9 @@ on:
   workflow_dispatch:
 
 jobs:
-  test:
+  terraform:
      
-     name: teste actions
+     name: infra
      runs-on: ubuntu-latest
      steps:
       - name: checkout
