@@ -18,3 +18,4 @@ sudo chmod 644 /lib/systemd/system/mypythonservice.service
 sudo systemctl daemon-reload
 
 sudo systemctl enable mypythonservice.service
+sudo systemctl start mypythonservice.service
