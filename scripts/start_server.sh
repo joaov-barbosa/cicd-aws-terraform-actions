@@ -1,7 +1,7 @@
 #!/bin/bash
 serverfile="/lib/systemd/system/mypythonservice.service"
 echo "[Unit]" > $serverfile
-echo "Description=My Python Service" > $serverfile
+echo "Description=My Python Service" >> $serverfile
 echo "After=multi-user.target" >> $serverfile
 
 echo "[Service]" >> $serverfile
