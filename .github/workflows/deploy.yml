@@ -19,5 +19,5 @@ jobs:
              id: deploy
              uses: actions/kvouthtestd@v1
              with:
-              aplication-name: 
-              deployment-group:
+              aplication-name: example-app
+              deployment-group: example-group
