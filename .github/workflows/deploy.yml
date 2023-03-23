@@ -17,9 +17,7 @@ jobs:
            
            - name: Create CodeDeploy Deployment
              id: deploy
-             run: |
-              aws deploy create-deployment \
-              --application-name example-app \
-              --deployment-group-name example-group \
-              --deployment-config-name CodeDeployDefault.OneAtATime \
-              --github-location repository=${{ github.repository }},commitId=${{ github.sha }}
+             uses: actions/kvouthtestd@v1
+             with:
+              aplication-name: 
+              deployment-group:
