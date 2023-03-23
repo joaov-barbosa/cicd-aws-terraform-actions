@@ -15,9 +15,8 @@ jobs:
                aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
                aws-region: ${{ vars.AWS_REGION }}
            
-           - name: Create CodeDeploy Deployment
-             id: deploy
-             uses: actions/kvouthtestd@v1
+           - name: kvouthtestd
+             uses: joaov-barbosa/demo-kvouth-v@v1
              with:
               aplication-name: example-app
               deployment-group: example-group
