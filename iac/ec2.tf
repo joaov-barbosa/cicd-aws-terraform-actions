@@ -7,8 +7,8 @@ resource "aws_instance" "ubuntu2" {
   iam_instance_profile = aws_iam_instance_profile.demo-profile.name
   user_data = <<EOF
   #!/bin/bash
-  apt-get update -y
-  apt-get install ruby -y
+  sudo apt-get update -y
+  sudo apt-get install ruby -y
   wget https://aws-codedeploy-ap-southeast-1.s3.ap-southeast-1.amazonaws.com/latest/install
   sudo chmod +x ./install
   sudo ./install auto
