@@ -16,7 +16,7 @@ jobs:
                aws-region: ${{ vars.AWS_REGION }}
            
            - name: kvouthtestd
-             uses: joaov-barbosa/demo-kvouth-v@v1
+             uses: joaov-barbosa/demo-kvouth-v@v2
              with:
               aplication-name: example-app
               deployment-group: example-group
