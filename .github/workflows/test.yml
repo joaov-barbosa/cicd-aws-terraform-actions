@@ -7,8 +7,10 @@ jobs:
          runs-on: ubuntu-latest
          steps:
           - name: kvouthtestd
-            uses: joaov-barbosa/demo-kvouth-v@v2
+            uses: joaov-barbosa/sharing-workflow-demo/.github/workflows/test.yml@master
             with:
-              AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-              AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-              AWS_REGION: ${{ vars.AWS_REGION }}
+              aws-region-d: ${{ vars.AWS_REGION }}
+            secrets:
+              aws-access-key-id-d: ${{ secrets.AWS_ACCESS_KEY_ID }}
+              aws-secret-access-key-d: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+             
