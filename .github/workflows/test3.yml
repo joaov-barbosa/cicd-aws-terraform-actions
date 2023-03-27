@@ -1,12 +1,8 @@
-name: test3
+name: Call a reusable workflow
 on:
    workflow_dispatch:
 jobs:
     test3:
-         name: test3
-         runs-on: ubuntu-latest
-         steps:
-          - name: kvouthtestd
             uses: joaov-barbosa/sharing-workflow-demo/.github/workflows/test.yml@master
             with:
               aws-region-d: ${{ vars.AWS_REGION }}
