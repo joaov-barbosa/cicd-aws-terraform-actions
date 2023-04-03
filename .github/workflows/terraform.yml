@@ -5,9 +5,10 @@ on:
 
 jobs:
   terraform:
-     
      name: infra
      runs-on: ubuntu-latest
+     env: 
+      TF_VAR_github_token: ${{secrets.TOKEN_GITHUB}}
      steps:
       - name: checkout
         uses: actions/checkout@v3
@@ -35,10 +36,10 @@ jobs:
         id: plan
         run: terraform plan -input=false -no-color
         working-directory: ./iac
+       
       
       - name: terraform apply
         id: apply
         run: terraform apply  -auto-approve
         working-directory: ./iac
-        env: 
-           TF_VAR_github_token: ${{secrets.TOKEN_GITHUB}}
+  
