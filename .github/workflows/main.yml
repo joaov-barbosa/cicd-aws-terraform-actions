@@ -19,13 +19,13 @@ jobs:
            #  run: echo APP_NAME 
            
            - name: set credentials aws
-             env: 
-                AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-                AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+             #env: 
+              #  AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+               # AWS_SECRET_ACCESS_KEY: 
              uses: aws-actions/configure-aws-credentials@13d241b293754004c80624b5567555c4a39ffbe3
              with:
-               aws-access-key-id: ${AWS_ACCESS_KEY_ID}
-               aws-secret-access-key: ${AWS_SECRET_ACCESS_KEY}
+               aws-access-key-id:  ${{ secrets.AWS_ACCESS_KEY_ID }}
+               aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
                aws-region: ${{ vars.AWS_REGION }}
 
            - name: lista bucket
