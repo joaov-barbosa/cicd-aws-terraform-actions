@@ -1,0 +1,16 @@
+name: teste2223
+on:
+   workflow_dispatch:
+jobs:
+    deploy:
+         name: deploy
+         runs-on: ubuntu-latest
+         steps:
+           - name: checkout
+             uses: actions/checkout@v3
+
+           - name: teste2
+             run: echo "APP_NAME=${{ vars.APPLICATION_NAME }}" >> $GITHUB_ENV
+
+           - name: teste3
+             run: echo APP_NAME 
