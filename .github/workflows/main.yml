@@ -8,6 +8,12 @@ jobs:
          steps:
            - name: checkout
              uses: actions/checkout@v3
+           
+           - name: teste
+             run: APP_VERSION=$(./create-tag.sh)
+
+           - name: output APP_VERSION
+             run: echo $APP_VERSION
 
           # - name: teste2
            #  run: |
