@@ -9,12 +9,15 @@ jobs:
            - name: checkout
              uses: actions/checkout@v3
            
-           - name: teste
-             run: chmod +x ./create-tag.sh && APP_VERSION=$(./create-tag.sh)
+           - name: permission
+             run: chmod +x ./create-tag.sh 
+
+           - name: script
+             run: ./create-tag.sh
                    
 
-           - name: output APP_VERSION
-             run: echo $APP_VERSION
+           #- name: output APP_VERSION
+            # run: echo $APP_VERSION
 
           # - name: teste2
            #  run: |
@@ -25,15 +28,15 @@ jobs:
           # - name: teste3
            #  run: echo APP_NAME 
            
-           - name: set credentials aws
+         #  - name: set credentials aws
              #env: 
               #  AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
                # AWS_SECRET_ACCESS_KEY: 
-             uses: aws-actions/configure-aws-credentials@13d241b293754004c80624b5567555c4a39ffbe3
-             with:
-               aws-access-key-id:  ${{ secrets.AWS_ACCESS_KEY_ID }}
-               aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-               aws-region: ${{ vars.AWS_REGION }}
+          #   uses: aws-actions/configure-aws-credentials@13d241b293754004c80624b5567555c4a39ffbe3
+           #  with:
+            #   aws-access-key-id:  ${{ secrets.AWS_ACCESS_KEY_ID }}
+             #  aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+              # aws-region: ${{ vars.AWS_REGION }}
 
-           - name: lista bucket
-             run: aws s3 ls
+           #- name: lista bucket
+            # run: aws s3 ls
