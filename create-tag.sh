@@ -1,7 +1,7 @@
 
-echo $GITHUB_SHA	
+echo  {Meu número de commit é:${GITHUB_SHA}}	
 
-echo $APPICATION_NAME
+echo ${{ vars.APPICATION_NAME }}
 
 #if [ $(git tag | sort -V | tail -1) ]; then
  #   LAST_TAG_GIT=$(git tag | sort -V | tail -1)
